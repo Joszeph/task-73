@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
+
+const [count, setCount] = useState(1)
+
+useEffect(()=>{
+  document.title = `Count (${count})`
+})
+
   return (
     <div className="App">
       <section class="hero">
@@ -13,6 +21,7 @@ function App() {
         <div class="notification">
           Edit the <code>./src</code> folder to add components.
         </div>
+        <button onClick={()=>setCount(count + 1)}>Count ({count})</button>
       </div>
     </div>
   );
